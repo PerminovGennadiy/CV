@@ -25,6 +25,30 @@
   display: block;
 }
 
+._icon-workspace:before {
+  content: "\e903";
+}
+
+._icon-clock:before {
+  content: "\e904";
+}
+
+._icon-flag:before {
+  content: "\e905";
+}
+
+._icon-group:before {
+  content: "\e906";
+}
+
+._icon-hi:before {
+  content: "\e907";
+}
+
+._icon-psychology:before {
+  content: "\e908";
+}
+
 ._icon-mail:before {
   content: "\e900";
 }
@@ -235,13 +259,14 @@ progress {
 }
 
 .sub-info__photo {
-  max-width: 17.5rem;
-  max-height: 17.5rem;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .sub-info__container {
   background-color: rgb(4, 35, 44);
-  height: 1150px;
+  height: 120%;
+  gap: 6.5625rem;
 }
 
 @supports (width: clamp( 9.375rem , 4.6477272727rem  +  23.6363636364vw , 17.5rem )) {
@@ -361,8 +386,33 @@ a p:hover {
 
 .main-info__container {
   background-color: #fff;
-  height: 1150px;
-  padding: 1.875rem;
+  height: auto;
+}
+
+@supports (padding: clamp( 0.625rem , -0.1022727273rem  +  3.6363636364vw , 1.875rem )) {
+  .main-info__container {
+    padding: clamp( 0.625rem , -0.1022727273rem  +  3.6363636364vw , 1.875rem );
+  }
+}
+
+@supports not (padding: clamp( 0.625rem , -0.1022727273rem  +  3.6363636364vw , 1.875rem )) {
+  .main-info__container {
+    padding: calc(0.625rem + 1.25 * (100vw - 20rem) / 34.375);
+  }
+}
+
+.main-info__about {
+  padding: 0 0 1.25rem 0;
+}
+
+.main-info__projects {
+  border-bottom: 1px solid #000;
+  padding-bottom: 1.25rem;
+}
+
+.main-info__certificate {
+  padding: 1.25rem 0 1.25rem 0;
+  border-bottom: 1px solid #000;
 }
 
 .about__first {
@@ -375,9 +425,9 @@ a p:hover {
 .about__second {
   font-weight: 500;
   font-size: 1rem;
-  margin: 0 0.3125rem;
   padding: 0 0 1.25rem 0;
   line-height: 1.25;
+  border-bottom: 1px solid #000;
 }
 
 .projects__first {
@@ -391,6 +441,7 @@ a p:hover {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.25;
+  margin: 0.9375rem 0 0.3125rem 0;
 }
 
 .projects__link {
@@ -398,6 +449,67 @@ a p:hover {
   font-size: 1rem;
   line-height: 1.25;
   padding: 0 0 1.25rem 0;
+}
+
+.projects__link:hover {
+  text-decoration: underline;
+}
+
+.certificate__title {
+  font-weight: 700;
+  font-size: 30px;
+  color: rgb(31, 31, 31);
+  padding: 0 0 1.25rem 0;
+}
+
+.certificate__name {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0 0 0.9375rem 0;
+}
+
+.certificate__name:hover {
+  text-decoration: underline;
+}
+
+.main-info__soft-skills {
+  padding-top: 1.25rem;
+}
+
+.soft-skills__title {
+  font-weight: 700;
+  font-size: 30px;
+  color: rgb(31, 31, 31);
+  padding: 0 0 1.25rem 0;
+}
+
+.soft-skills__skill {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0 0 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.soft-skills__skill::before {
+  font-size: 1.375rem;
+  margin-right: 0.4375rem;
+  top: 104px;
+}
+
+.first {
+  margin-top: 0;
+}
+
+.last {
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
 }
 
 /*
@@ -449,3 +561,9 @@ a p:hover {
 	}
 }
 */
+
+@media (max-width: 61.99875em) {
+  .header__container {
+    margin-top: 0;
+  }
+}
