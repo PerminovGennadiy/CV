@@ -380,10 +380,6 @@ progress {
   }
 }
 
-.sub-info__telegram {
-    display: flex;
-}
-
 a p:hover {
   text-decoration: underline;
 }
@@ -442,7 +438,7 @@ a p:hover {
 }
 
 .projects__second {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1.25;
   margin: 0.9375rem 0 0.3125rem 0;
